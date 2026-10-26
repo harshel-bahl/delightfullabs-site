@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The hardest data in AI | Delightful AI</title>
+  <meta name="description" content="Delightful AI refines unpublished science and clinical data into frontier-quality RL environments at enormous scale, for the world's most important problems.">
+  <meta property="og:title" content="The hardest data in AI">
+  <meta property="og:description" content="Delightful AI refines unpublished science and clinical data into frontier-quality RL environments at enormous scale, for the world's most important problems.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://delightfullabs.ai/logo.png">
+  <meta property="og:url" content="https://delightfullabs.ai/">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --text: #1c1c1a;
+      --muted: #5f5e5a;
+      --rule: #e6e3dc;
+      --accent: #1c1c1a;
+      --card: #f3f1ec;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121211;
+        --text: #ecebe7;
+        --muted: #a3a19b;
+        --rule: #2b2a27;
+        --accent: #ecebe7;
+        --card: #1b1a18;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Source Serif 4", Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-size: 20px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    header.site {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { display: block; line-height: 0; }
+    .logo img { height: 34px; width: auto; mix-blend-mode: multiply; }
+    @media (prefers-color-scheme: dark) {
+      .logo img { filter: invert(1); mix-blend-mode: screen; }
+    }
+    header.site a.contact {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    header.site a.contact:hover { color: var(--text); }
+
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 72px 24px 48px;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+    h1 {
+      font-size: clamp(40px, 6.5vw, 60px);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      font-weight: 600;
+      margin: 0 0 28px;
+    }
+    .lead {
+      font-size: 23px;
+      line-height: 1.5;
+      color: var(--text);
+      font-style: italic;
+      font-weight: 400;
+      margin: 0 0 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    h2 {
+      font-size: 27px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+      margin: 64px 0 16px;
+    }
+    p { margin: 0 0 22px; }
+
+    .problems {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0 0;
+      counter-reset: problem;
+      display: grid;
+      gap: 12px;
+    }
+    .problems li {
+      counter-increment: problem;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px 22px 20px 64px;
+      position: relative;
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .problems li::before {
+      content: counter(problem, decimal-leading-zero);
+      position: absolute;
+      left: 22px;
+      top: 21px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .problems strong {
+      display: block;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .closing a, footer a { color: var(--text); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+    footer {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+
+    @media (max-width: 600px) {
+      body { font-size: 18px; }
+      header.site { padding: 20px 16px; }
+      .logo img { height: 26px; }
+      main { padding: 40px 16px 32px; }
+      .lead { font-size: 20px; margin-bottom: 40px; padding-bottom: 40px; }
+      h2 { font-size: 23px; margin-top: 48px; }
+      .problems li { font-size: 17px; }
+      .problems li { padding: 18px 18px 18px 54px; }
+      .problems li::before { left: 18px; top: 19px; }
+      footer { padding: 32px 16px 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <a class="logo" href="/" aria-label="Delightful AI home"><img src="logo.png" alt="Delightful AI"></a>
+    <a class="contact" href="mailto:harshel@delightfullabs.ai">Get in touch</a>
+  </header>
+
+  <main>
+    <article>
+      <p class="eyebrow">Thesis · October 2026</p>
+      <h1>The hardest data in AI</h1>
+      <p class="lead">Delightful AI refines unpublished science and clinical data into frontier-quality RL environments at enormous scale, for the world's most important problems.</p>
+
+      <p>The first AI models for science and medicine learned from papers, textbooks, and clinical guidelines, and labs then hired PhDs and physicians to write hard problems with answers. Models now outscore PhDs on graduate-level exams and pass medical licensing tests, yet the real work of designing an experiment, interpreting an ambiguous result, or treating a patient whose case fits no guideline looks little like an exam.</p>
+
+      <p>We believe science and healthcare are the most strategically important domains for the next phase of frontier AI. They are where the human and economic stakes are highest, where every major lab now has a dedicated mandate, and where models still fall furthest short of the best experts. They are also the hardest to train on, because of two constraints.</p>
+
+      <p>The first is fragmentation: the working record of science and medicine, from failed experiments and raw measurements to patient journeys and AI tool sessions, is scattered across thousands of organizations, and most of it has never been published or paid for. That record holds the failed attempts and judgment calls that papers and guidelines leave out, exactly what a model needs to learn how the work is done. Because it never reached the internet, no model has memorized it.</p>
+
+      <p>The second is verification: some outcomes are clean, like a reaction that works or a biopsy that confirms a diagnosis, but many arrive months later, are confounded by other variables, or never resolve. Therefore, whether an experiment was well designed or a treatment plan was right for a patient can only be judged by the few people best at that exact thing.</p>
+
+      <p>Solving both takes a company devoted entirely to the hardest problems in frontier data, which is why we are building Delightful AI. We source this data through our own infrastructure and refine it into RL environments with graders that frontier labs can trust.</p>
+
+      <h2>Sourcing the most fragmented data in the world</h2>
+
+      <p>This data sits with academic labs and research institutes, hospitals and health systems, biotech and pharma companies, contract research and diagnostic labs, and the AI tools scientists and clinicians use. No one has aggregated it, because no one has built the infrastructure or paid for it.</p>
+
+      <p>We are building both, with connectors that pull from lab notebooks, instruments, record systems, and product logs, and pipelines that handle consent, licensing, and de-identification so sensitive data never has to leave its owner. Partners share in the value their data creates, and we work with leading researchers and clinicians to collect new data built for training from the start.</p>
+
+      <h2>Turning data into frontier environments</h2>
+
+      <p>Frontier training needs environments of high quality and volume, delivered fast enough to keep pace with training runs. Today labs get two of the three: quality and volume arrive slowly, quality and speed come in small batches, and speed and volume sacrifice quality. We are building the lab and infrastructure to deliver all three, with expertise that deepens with every environment we build.</p>
+
+      <p>Our first job is deciding what is worth training on, since most data is too routine to teach a frontier model anything. The value sits in the informative minority: the experiment that failed for a reason nobody expected, the patient whose case didn't fit the guideline, the session where an AI tool confidently got it wrong.</p>
+
+      <p>Each research campaign or patient journey we select holds dozens of decisions that can each become an environment, and for sessions from deployed AI tools we rebuild what the user needed and the data and tools they had.</p>
+
+      <h2>Scaling data quality is the bottleneck</h2>
+
+      <p>The hardest part is the grader. Where reality returned a clean outcome, we freeze what was known at the time, ask the model to decide, and grade the decision against what happened. Where it didn't, leading researchers and clinicians define what good looks like, and we check their judgment against outcomes wherever possible.</p>
+
+      <p>We hold every layer to the same bar: the data we source, the environments built from it, and their graders all pass automated adversarial testing, agent-run quality audits, and expert review before reaching a lab, and our training runs show which data improves models.</p>
+
+      <p>AlphaFold was the payoff from half a century of the Protein Data Bank, where every structure met a common standard, and most of science and medicine never built anything like it. We intend to build it by combining what no one else does: proprietary access to fragmented data, the experts to grade it, and research infrastructure to produce environments and data to the highest standards at enormous scale.</p>
+
+      <h2>Five problems we measure ourselves against</h2>
+
+      <p>These five open problems set the direction for everything we build.</p>
+
+      <ol class="problems">
+        <li><strong>Catch toxicity before the first human dose.</strong> Preclinical tests miss up to half of the drugs that later injure the liver.</li>
+        <li><strong>Predict how a cell responds to a perturbation it has never seen.</strong> Models in Arc Institute's 2025 Virtual Cell Challenge still didn't consistently beat naive baselines.</li>
+        <li><strong>Find antibiotics that can get into gram-negative bacteria.</strong> Drug resistance kills over a million people a year, and no new antibiotic class for these bacteria has reached patients in decades.</li>
+        <li><strong>Make the materials AI designs on the first try.</strong> AI has proposed hundreds of thousands of stable crystals, but only a few hundred had been made when they were announced.</li>
+        <li><strong>See sepsis hours before it sets in.</strong> Sepsis is linked to one in five deaths worldwide, and a leading hospital warning model missed two-thirds of cases.</li>
+      </ol>
+
+      <h2>The future of science and healthcare AI</h2>
+
+      <p>We chose science and healthcare because their frontier is unbounded. Long after models master coding and knowledge work, every discovery will raise new questions and every patient will bring a new case, and we will be there to keep frontier models learning.</p>
+
+      <p class="closing">If you hold research, clinical, or deployment data, lead your field, or want to help build this, let's chat: <a href="mailto:harshel@delightfullabs.ai">harshel@delightfullabs.ai</a></p>
+    </article>
+  </main>
+
+  <footer>
+    <span>© 2026 Delightful AI</span>
+    <a href="mailto:harshel@delightfullabs.ai">harshel@delightfullabs.ai</a>
+  </footer>
+</body>
+</html>
