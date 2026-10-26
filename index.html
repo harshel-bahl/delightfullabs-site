@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The hardest data in AI | Delightful AI</title>
+  <title>The next frontier of data | Delightful AI</title>
   <meta name="description" content="Delightful AI refines unpublished science and clinical data into frontier-quality RL environments at enormous scale, for the world's most important problems.">
-  <meta property="og:title" content="The hardest data in AI">
+  <meta property="og:title" content="The next frontier of data">
+  <meta name="author" content="Harshel Bahl, Jorge Campos">
   <meta property="og:description" content="Delightful AI refines unpublished science and clinical data into frontier-quality RL environments at enormous scale, for the world's most important problems.">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://delightfullabs.ai/logo.png">
@@ -16,22 +17,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbfaf7;
-      --text: #1c1c1a;
-      --muted: #5f5e5a;
-      --rule: #e6e3dc;
-      --accent: #1c1c1a;
-      --card: #f3f1ec;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #121211;
-        --text: #ecebe7;
-        --muted: #a3a19b;
-        --rule: #2b2a27;
-        --accent: #ecebe7;
-        --card: #1b1a18;
-      }
+      color-scheme: light;
+      --bg: #ffffff;
+      --text: #000000;
+      --muted: #555555;
+      --rule: #e5e5e5;
+      --accent: #000000;
+      --card: #f5f5f5;
     }
 
     * { box-sizing: border-box; }
@@ -58,11 +50,8 @@
     }
     .logo { display: block; line-height: 0; }
     .logo img { height: 34px; width: auto; mix-blend-mode: multiply; }
-    @media (prefers-color-scheme: dark) {
-      .logo img { filter: invert(1); mix-blend-mode: screen; }
-    }
     header.site a.contact {
-      color: var(--muted);
+      color: var(--text);
       text-decoration: none;
       font-size: 15px;
       font-weight: 500;
@@ -75,13 +64,13 @@
       padding: 72px 24px 48px;
     }
 
-    .eyebrow {
-      font-size: 14px;
+    .byline {
+      font-size: 16px;
       font-weight: 500;
-      letter-spacing: 0.02em;
-      color: var(--muted);
+      color: var(--text);
       margin: 0 0 20px;
     }
+    .byline time { color: var(--muted); font-weight: 400; }
     h1 {
       font-size: clamp(40px, 6.5vw, 60px);
       line-height: 1.08;
@@ -125,7 +114,7 @@
       position: relative;
       font-size: 18px;
       line-height: 1.55;
-      color: var(--muted);
+      color: var(--text);
     }
     .problems li::before {
       content: counter(problem, decimal-leading-zero);
@@ -182,8 +171,8 @@
 
   <main>
     <article>
-      <p class="eyebrow">Thesis · October 2026</p>
-      <h1>The hardest data in AI</h1>
+      <p class="byline">Harshel Bahl, Jorge Campos · <time datetime="2026-10">October 2026</time></p>
+      <h1>The next frontier of data</h1>
       <p class="lead">Delightful AI refines unpublished science and clinical data into frontier-quality RL environments at enormous scale, for the world's most important problems.</p>
 
       <p>The first AI models for science and medicine learned from papers, textbooks, and clinical guidelines, and labs then hired PhDs and physicians to write hard problems with answers. Models now outscore PhDs on graduate-level exams and pass medical licensing tests, yet the real work of designing an experiment, interpreting an ambiguous result, or treating a patient whose case fits no guideline looks little like an exam.</p>
